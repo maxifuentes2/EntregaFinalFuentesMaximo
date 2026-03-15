@@ -11,6 +11,40 @@ paths:
       summary: Registra una nueva adopción
       tags:
         - Adoptions
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                uid:
+                  type: string
+                  description: ID del usuario
+                  example: "69b728fa6df9d663e8db8c7c"
+                pid:
+                  type: string
+                  description: ID de la mascota
+                  example: "69b728fa6df9d663e8db8c8b"
       responses:
         201:
           description: Adopción creada con éxito
+        400:
+          description: Faltan datos necesarios
+  /api/adoptions/{aid}:
+    get:
+      summary: Obtiene una adopción específica por ID
+      tags:
+        - Adoptions
+      parameters:
+        - in: path
+          name: aid
+          required: true
+          schema:
+            type: string
+          description: ID de la adopción a buscar
+      responses:
+        200:
+          description: Adopción encontrada exitosamente
+        404:
+          description: Adopción no encontrada

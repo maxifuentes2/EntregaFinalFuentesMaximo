@@ -29,10 +29,9 @@ router.post('/generateData', async (req, res) => {
             await petModel.insertMany(petsList);
         }
 
-        res.send({ status: "success", message: "Datos generados e insertados con éxito" });
+        res.status(201).send({ status: "success", message: "Datos generados e insertados con éxito" });
 
     } catch (error) {
-        console.log(error);
         res.status(500).send({ status: "error", error: "Algo salió mal al insertar" });
     }
 });

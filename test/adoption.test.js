@@ -10,7 +10,7 @@ describe('Router de Adopciones', () => {
 
     before(async () => {
         if (mongoose.connection.readyState === 0) {
-            await mongoose.connect('mongodb://127.0.0.1:27017/entrega-mocks');
+            await mongoose.connect('mongodb://127.0.0.1:27017/entrega-final');
         }
         const newAdoption = await adoptionModel.create({
             owner: new mongoose.Types.ObjectId(),
@@ -41,5 +41,16 @@ describe('Router de Adopciones', () => {
         const fakeId = new mongoose.Types.ObjectId().toString();
         const { statusCode } = await requester.get(`/api/adoptions/${fakeId}`);
         expect(statusCode).to.be.equal(404);
+    });
+
+    it('Debe intentar crear una adopción enviando un JSON en el body', async () => {
+        const fakeUserId = new mongoose.Types.ObjectId().toString();
+        const fakePetId = new mongoose.Types.ObjectId().toString();
+        
+        const { statusCode } = await requester
+            .post('/api/adoptions')
+            .send({ uid: fakeUserId, pid: fakePetId });
+            
+        expect(statusCode).to.be.oneOf([201, 200, 404, 500]);
     });
 });

@@ -8,7 +8,8 @@ import userModel from './models/User.js';
 import petModel from './models/Pet.js';
 
 const app = express();
-const PORT = 8080;
+const PORT = process.env.PORT || 8080;
+const MONGO_URL = process.env.MONGO_URL || 'mongodb://127.0.0.1:27017/entrega-final';
 
 app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
@@ -27,7 +28,7 @@ const swaggerOptions = {
 const specs = swaggerJSDoc(swaggerOptions);
 app.use('/apidocs', swaggerUiExpress.serve, swaggerUiExpress.setup(specs));
 
-mongoose.connect('mongodb://host.docker.internal:27017/entrega-mocks')
+mongoose.connect(MONGO_URL)
     .then(() => console.log('Conectado a la base de datos'))
     .catch(error => console.error(error));
 
