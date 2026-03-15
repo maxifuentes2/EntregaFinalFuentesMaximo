@@ -27,5 +27,5 @@ npm test
 
 ## 📖 Documentación
 
-Toda la documentación de los endpoints está hecha con Swagger. Una vez que levantes el proyecto, podés verla entrando a:
+Toda la documentación de los endpoints fue realizada con Swagger. Una vez que levantes el proyecto, podés verla entrando a:
 http://localhost:8080/apidocs
