@@ -27,7 +27,7 @@ const swaggerOptions = {
 const specs = swaggerJSDoc(swaggerOptions);
 app.use('/apidocs', swaggerUiExpress.serve, swaggerUiExpress.setup(specs));
 
-mongoose.connect('mongodb://127.0.0.1:27017/entrega-mocks')
+mongoose.connect('mongodb://host.docker.internal:27017/entrega-mocks')
     .then(() => console.log('Conectado a la base de datos'))
     .catch(error => console.error(error));
 

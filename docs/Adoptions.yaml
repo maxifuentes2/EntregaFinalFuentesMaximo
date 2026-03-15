@@ -1,0 +1,16 @@
+paths:
+  /api/adoptions:
+    get:
+      summary: Obtiene todas las adopciones
+      tags:
+        - Adoptions
+      responses:
+        200:
+          description: Lista de adopciones obtenida con éxito
+    post:
+      summary: Registra una nueva adopción
+      tags:
+        - Adoptions
+      responses:
+        201:
+          description: Adopción creada con éxito

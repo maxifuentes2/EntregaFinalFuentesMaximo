@@ -1,0 +1,26 @@
+paths:
+  /api/mocks/generateData:
+    post:
+      summary: Genera usuarios y mascotas aleatorios y los guarda en la DB
+      tags:
+        - Mocks
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                users:
+                  type: integer
+                  description: Cantidad de usuarios a generar
+                  example: 10
+                pets:
+                  type: integer
+                  description: Cantidad de mascotas a generar
+                  example: 10
+      responses:
+        200:
+          description: Datos generados e insertados con éxito
+        500:
+          description: Error interno del servidor
