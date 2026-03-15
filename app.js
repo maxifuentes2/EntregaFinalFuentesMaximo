@@ -34,6 +34,10 @@ mongoose.connect('mongodb://127.0.0.1:27017/entrega-mocks')
 app.use('/api/mocks', mocksRouter);
 app.use('/api/adoptions', adoptionRouter);
 
+app.get('/', (req, res) => {
+    res.send('Bienvenido a la API de Adopción de Mascotas'); 
+});
+
 app.get('/api/users', async (req, res) => {
     try {
         const users = await userModel.find();
