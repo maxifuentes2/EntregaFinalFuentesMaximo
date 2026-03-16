@@ -36,7 +36,7 @@ app.use('/api/mocks', mocksRouter);
 app.use('/api/adoptions', adoptionRouter);
 
 app.get('/', (req, res) => {
-    res.send('Bienvenido a la API de Adopción de Mascotas'); 
+    res.send('Bienvenido a la API de Adopción de Mascotas. Maximo Fuentes'); 
 });
 
 app.get('/api/users', async (req, res) => {

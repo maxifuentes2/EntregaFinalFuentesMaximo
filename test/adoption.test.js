@@ -51,6 +51,6 @@ describe('Router de Adopciones', () => {
             .post('/api/adoptions')
             .send({ uid: fakeUserId, pid: fakePetId });
             
-        expect(statusCode).to.be.oneOf([201, 200, 404, 500]);
+        expect(statusCode).to.be.equal(404);
     });
 });

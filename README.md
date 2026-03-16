@@ -2,30 +2,21 @@
 
 ¡Hola! Este es el proyecto final para el curso, donde construí una API REST encargada de gestionar y simular adopciones de mascotas. 
 
-Está desarrollado con Node.js y Express, utiliza MongoDB para la base de datos y, como requisito principal de esta entrega, el proyecto se encuentra totalmente dockerizado para que sea súper fácil de ejecutar.
+Está desarrollado con Node.js y Express, utiliza MongoDB para la base de datos y, como requisito principal de esta entrega, el proyecto se encuentra totalmente dockerizado para que sea fácil de ejecutar sin conflictos de entorno.
 
 ## 🐳 Imagen en Docker Hub
 
-Podés encontrar la imagen oficial y lista para usar en el siguiente enlace:
-https://hub.docker.com/r/maxifuentes2/entrega-final
+La imagen oficial del proyecto ha sido generada y subida a Docker Hub. Podés encontrarla en el siguiente enlace:
+**[https://hub.docker.com/r/maxifuentes2/entrega-final](https://hub.docker.com/r/maxifuentes2/entrega-final)**
 
 ## 🚀 Instrucciones para ejecutar con Docker
 
+Para garantizar que el backend y la base de datos MongoDB se conecten correctamente, el proyecto utiliza **Docker Compose**. 
+
 Si querés correr el proyecto localmente, seguí estos pasos:
 
-1. Cloná este repositorio en tu computadora.
-2. Construí la imagen de Docker corriendo este comando en la terminal:
-   docker build -t maxifuentes2/entrega-final .
-3. Levantá el contenedor:
-   docker run -p 8080:8080 maxifuentes2/entrega-final
-4. ¡Listo! La API ya va a estar corriendo en http://localhost:8080
-
-## 🧪 Testing
-
-Para comprobar que todo funciona correctamente, desarrollé tests funcionales para la ruta de adopciones. Podés ejecutarlos con:
-npm test
-
-## 📖 Documentación
-
-Toda la documentación de los endpoints fue realizada con Swagger. Una vez que levantes el proyecto, podés verla entrando a:
-http://localhost:8080/apidocs
+1. Cloná este repositorio en tu computadora y abrí una terminal en la carpeta raíz.
+2. Asegurate de tener Docker Desktop abierto y en ejecución.
+3. Ejecutá el siguiente comando para construir la imagen y levantar ambos contenedores (API y Base de Datos) en simultáneo:
+   ```bash
+   docker compose up --build
