@@ -20,3 +20,19 @@ Si querés correr el proyecto localmente, seguí estos pasos:
 3. Ejecutá el siguiente comando para construir la imagen y levantar ambos contenedores (API y Base de Datos) en simultáneo:
    ```bash
    docker compose up --build
+   ```
+4. ¡Listo! La API ya va a estar conectada a Mongo y corriendo en **http://localhost:8080**
+
+*(Nota: Si deseás detener los contenedores más tarde, podés usar `docker compose down`)*
+
+## 🧪 Testing
+
+Para comprobar que todo funciona correctamente, desarrollé tests funcionales para la ruta de adopciones usando Mocha, Chai y Supertest. Podés ejecutarlos corriendo:
+   ```bash
+   npm test
+   ```
+
+## 📖 Documentación
+
+Toda la documentación de los endpoints fue realizada con Swagger. Una vez que levantes el proyecto con Docker Compose, podés visualizarla e interactuar con ella entrando a:
+**http://localhost:8080/apidocs**
