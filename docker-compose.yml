@@ -2,16 +2,12 @@ version: '3.8'
 
 services:
   backend:
-    build: .
+    image: maxifuentes2/entrega-final:latest
     container_name: api-mascotas
     ports:
       - "8080:8080"
     environment:
       - MONGO_URL=mongodb://mongodb:27017/entrega-final
-    volumes:
-      - .:/app
-      - /app/node_modules
-    command: npx nodemon app.js
     depends_on:
       - mongodb
 

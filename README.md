@@ -11,15 +11,15 @@ La imagen oficial del proyecto ha sido generada y subida a Docker Hub. Podés en
 
 ## 🚀 Instrucciones para ejecutar con Docker
 
-Para garantizar que el backend y la base de datos MongoDB se conecten correctamente, el proyecto utiliza **Docker Compose**. 
+Para facilitar la evaluación, el proyecto cuenta con un archivo `docker-compose.yml` configurado para descargar la imagen oficial directamente desde Docker Hub y conectarla automáticamente con una base de datos MongoDB.
 
 Si querés correr el proyecto localmente, seguí estos pasos:
 
 1. Cloná este repositorio en tu computadora y abrí una terminal en la carpeta raíz.
 2. Asegurate de tener Docker Desktop abierto y en ejecución.
-3. Ejecutá el siguiente comando para construir la imagen y levantar ambos contenedores (API y Base de Datos) en simultáneo:
+3. Ejecutá el siguiente comando para descargar la imagen y levantar ambos contenedores (API y Base de Datos) en segundo plano:
    ```bash
-   docker compose up --build
+   docker compose up -d
    ```
 4. ¡Listo! La API ya va a estar conectada a Mongo y corriendo en **http://localhost:8080**
 
@@ -28,9 +28,9 @@ Si querés correr el proyecto localmente, seguí estos pasos:
 ## 🧪 Testing
 
 Para comprobar que todo funciona correctamente, desarrollé tests funcionales para la ruta de adopciones usando Mocha, Chai y Supertest. Podés ejecutarlos corriendo:
-   ```bash
-   npm test
-   ```
+```bash
+npm test
+```
 
 ## 📖 Documentación
 
